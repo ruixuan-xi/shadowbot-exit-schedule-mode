@@ -1,0 +1,14 @@
+# ============================================================
+#  换行符策略：必须显式声明，否则 Windows 上 clone 下来会变形
+#  - .bat 若被转成 LF，cmd 解析 goto/代码块会异常
+#  - .ps1 若被转成 LF，PowerShell 5.1 可能解析出错
+# ============================================================
+*.bat   text eol=crlf
+*.ps1   text eol=crlf
+*.txt   text eol=crlf
+*.md    text eol=lf
+
+# 二进制文件不做换行转换
+*.exe   binary
+*.png   binary
+*.jpg   binary
